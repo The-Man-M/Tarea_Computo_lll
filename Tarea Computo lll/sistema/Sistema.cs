@@ -13,6 +13,32 @@ namespace Sistema
 
         public void mostrarMenuEjecutivo()
         {
+            int clienteEjecutivo = 0;
+            string user="", pass="";
+            int indice = 0;
+            int menu = 0;
+            bool acceso = false;
+            for (int i = 0; i < clientes.Count; i++)
+            {
+               acceso = clientes[i].inicioDesecion(pass,user);
+            }
+            if (acceso)
+            {
+
+                Console.WriteLine();
+                switch (menu)
+                {
+                    case 1: verCliente(); break;
+                    case 2:
+                        indice = clientes.Count + 1;
+                        agregarCliente(clientes[indice]); break;
+                    case 3:
+                        verCliente();
+                        eliminarCliente(clientes[indice]);
+                        break;
+
+                }
+            }
 
         }
         public void mostrarMenu()
@@ -22,9 +48,9 @@ namespace Sistema
         public void verCliente()
         {
             Console.WriteLine("Lista de clientes registrados:");
-            foreach (var _cliente in clientes)
+            for (int i = 0; i < clientes.Count; i++)
             {
-
+                clientes[i].mostrardatos(i + 1);
             }
         }
         public void agregarCliente(Cliente cliente)
@@ -54,13 +80,11 @@ namespace Sistema
         }
         public void eliminarCliente(Cliente cliente)
         {
-            for (int i = 0; i < clientes.Count; i++)
-            {
-                clientes[i].mostrardatos(i + 1);
-            }
+            int i = 0;
+            verCliente();
+            Console.WriteLine("Ingrese el indice del cliente a eliminar");
+
+            clientes.Remove(clientes[i - 1]);
         }
-
-
     }
-
 }

@@ -1,0 +1,4 @@
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.AssemblyInfoInputs.cache
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.AssemblyInfo.cs
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.csproj.CoreCompileInputs.cache

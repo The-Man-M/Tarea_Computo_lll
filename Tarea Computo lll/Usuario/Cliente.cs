@@ -1,5 +1,3 @@
-using System.Globalization;
-
 namespace Usuario
 {
     class Cliente
@@ -10,10 +8,9 @@ namespace Usuario
         protected string User;
         protected string Pass;
         protected bool clienteEjecutivo = false;
-        public Cliente()
-        {
 
-        }
+        public Cliente() { }
+
         public Cliente(string nombre, string apellido, int edad, string user, string pass)
         {
             Nombre = nombre;
@@ -22,34 +19,39 @@ namespace Usuario
             User = user;
             Pass = pass;
         }
-       ClienteEjecutivo ClienteEjecutivo { get; set; }
+        public Cliente(string nombre, string apellido, int edad, string user, string pass, bool clienteejecutivo)
+        {
+            Nombre = nombre;
+            Apellido = apellido;
+            Edad = edad;
+            User = user;
+            Pass = pass;
+            clienteEjecutivo = clienteejecutivo;
+        }
+        ClienteEjecutivo ClienteEjecutivo { get; set; }
+        ClienteNormal ClienteNormal { get; set; }
 
-        public bool inicioDesecion()
+        public bool inicioDesecion(string pass, string user)
         {
             if (clienteEjecutivo)
             {
-
-                return ClienteEjecutivo.login();
-
+                return ClienteEjecutivo.login(pass,user);
             }
             return false;
         }
         public void mostrardatos(int indice)
         {
-            Console.WriteLine($"{indice} - Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}, Usuario: {User} ");
+            if (!this.clienteEjecutivo)
+            {
+                Console.WriteLine($"{indice} - Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}, Usuario: {User} ");
+            }
         }
-
-
-
     }
 
     class ClienteNormal : Cliente
     {
-
-        public bool consultardatos()
+        public bool consultardatos(string pass, string user)
         {
-            string pass = "";
-            string user = "";
             bool acceso = false;
             if (this.User == user)
             {
@@ -58,18 +60,13 @@ namespace Usuario
                     acceso = true;
                 }
             }
-
             return acceso;
-
         }
     }
     class ClienteEjecutivo : Cliente
     {
-
-        public bool login()
+        public bool login(string pass, string user)
         {
-            string pass = "";
-            string user = "";
             bool acceso = false;
             if (this.User == user)
             {
