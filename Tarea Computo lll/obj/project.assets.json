@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Carlo\\OneDrive\\Documentos\\GitHub\\C#\\Tarea Computo lll\\Tarea Computo lll\\Tarea Computo lll.csproj",
+      "projectUniqueName": "C:\\Users\\Carlo\\OneDrive\\Documentos\\GitHub\\C#\\Tarea_Computo_lll\\Tarea Computo lll\\Tarea Computo lll.csproj",
       "projectName": "Tarea Computo lll",
-      "projectPath": "C:\\Users\\Carlo\\OneDrive\\Documentos\\GitHub\\C#\\Tarea Computo lll\\Tarea Computo lll\\Tarea Computo lll.csproj",
+      "projectPath": "C:\\Users\\Carlo\\OneDrive\\Documentos\\GitHub\\C#\\Tarea_Computo_lll\\Tarea Computo lll\\Tarea Computo lll.csproj",
       "packagesPath": "C:\\Users\\Carlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Carlo\\OneDrive\\Documentos\\GitHub\\C#\\Tarea Computo lll\\Tarea Computo lll\\obj\\",
+      "outputPath": "C:\\Users\\Carlo\\OneDrive\\Documentos\\GitHub\\C#\\Tarea_Computo_lll\\Tarea Computo lll\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
