@@ -41,11 +41,20 @@ namespace Usuario
         }
         public void mostrardatos(int indice)
         {
-            if (!this.clienteEjecutivo)
+            
+            if (!this.clienteEjecutivo )
             {
+                
                 Console.WriteLine($"{indice} - Nombre: {Nombre}, Apellido: {Apellido}, Edad: {Edad}, Usuario: {User} ");
             }
         }
+        public bool iniciodesecion(string user, string pass)
+        {
+
+            return ClienteNormal.consultardatos(pass,user);
+        }
+      
+
     }
 
     class ClienteNormal : Cliente
@@ -58,6 +67,7 @@ namespace Usuario
                 if (this.Pass == pass)
                 {
                     acceso = true;
+                    mostrardatos(1);
                 }
             }
             return acceso;

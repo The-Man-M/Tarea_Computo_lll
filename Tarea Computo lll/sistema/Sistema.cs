@@ -14,29 +14,31 @@ namespace Sistema
         public void mostrarMenuEjecutivo()
         {
             int clienteEjecutivo = 0;
-            string user="", pass="";
+            string user = "", pass = "";
             int indice = 0;
             int menu = 0;
             bool acceso = false;
 
 
-            Console.WriteLine();
+            Console.WriteLine("Ingrese el usuario");
             user = Console.ReadLine();
 
+            Console.WriteLine("Ingrese la contraseña");
             Console.WriteLine();
             pass = Console.ReadLine();
 
 
             for (int i = 0; i < clientes.Count; i++)
             {
-               acceso = clientes[i].inicioDesecion(pass,user);
+                acceso = clientes[i].inicioDesecion(pass, user);
                 if (clientes[i].clienteEjecutivo) clienteEjecutivo = i; break;
             }
             if (acceso)
             {
 
-                Console.WriteLine();
+                Console.WriteLine("Menu de cliente ejecutivo\n1. Ver clientes\n2. Agregar clientes\n3. Eliminar clientes\n4. Salir");
                 menu = num_rango(1, 4);
+                
                 switch (menu)
                 {
                     case 1: verCliente(); break;
@@ -54,12 +56,28 @@ namespace Sistema
         }
         public void mostrarMenu()
         {
+            string user = "", pass = "";
             int menu = 0;
-            menu = num_rango(1,2);
-           if(menu == 1) 
-            { 
+         
+            menu = num_rango(1, 2);
+            if (menu == 1)
+            {
+                Console.WriteLine("Ingrese el usuario");
+                user = Console.ReadLine();
+
+                Console.WriteLine("Ingrese la contraseña");
+                Console.WriteLine();
+                pass = Console.ReadLine();
+                for (int i = 0;i < clientes.Count;i++)
+                {
+                    if(clientes[i].iniciodesecion(user, pass))
+                    {
+                        clientes[i].mostrardatos(1);
+                        break;
+                    }
+                }
             }
-           else { }
+            else { }
         }
         public void verCliente()
         {
@@ -94,7 +112,7 @@ namespace Sistema
             int i = 0;
             verCliente();
             Console.WriteLine("Ingrese el indice del cliente a eliminar");
-            i = num_rango(1, clientes.Count)-1;
+            i = num_rango(1, clientes.Count) - 1;
             clientes.Remove(clientes[i - 1]);
         }
         static int num_po()
@@ -111,8 +129,8 @@ namespace Sistema
             {
                 return numero > 0;
             }
-            
-    }
+
+        }
         static int num_rango(int num_min, int num_max)
         {
 
@@ -141,3 +159,4 @@ namespace Sistema
             }
         }
     }
+}

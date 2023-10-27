@@ -2,3 +2,13 @@ C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll
 C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.AssemblyInfoInputs.cache
 C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.AssemblyInfo.cs
 C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.csproj.CoreCompileInputs.cache
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\bin\Debug\net6.0\Tarea Computo lll.exe
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\bin\Debug\net6.0\Tarea Computo lll.deps.json
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\bin\Debug\net6.0\Tarea Computo lll.runtimeconfig.json
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\bin\Debug\net6.0\Tarea Computo lll.dll
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\bin\Debug\net6.0\Tarea Computo lll.pdb
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.dll
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\refint\Tarea Computo lll.dll
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.pdb
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\Tarea Computo lll.genruntimeconfig.cache
+C:\Users\Carlo\OneDrive\Documentos\GitHub\C#\Tarea_Computo_lll\Tarea Computo lll\obj\Debug\net6.0\ref\Tarea Computo lll.dll
