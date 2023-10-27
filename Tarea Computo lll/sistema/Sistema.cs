@@ -18,14 +18,25 @@ namespace Sistema
             int indice = 0;
             int menu = 0;
             bool acceso = false;
+
+
+            Console.WriteLine();
+            user = Console.ReadLine();
+
+            Console.WriteLine();
+            pass = Console.ReadLine();
+
+
             for (int i = 0; i < clientes.Count; i++)
             {
                acceso = clientes[i].inicioDesecion(pass,user);
+                if (clientes[i].clienteEjecutivo) clienteEjecutivo = i; break;
             }
             if (acceso)
             {
 
                 Console.WriteLine();
+                menu = num_rango(1, 4);
                 switch (menu)
                 {
                     case 1: verCliente(); break;
@@ -43,7 +54,12 @@ namespace Sistema
         }
         public void mostrarMenu()
         {
-
+            int menu = 0;
+            menu = num_rango(1,2);
+           if(menu == 1) 
+            { 
+            }
+           else { }
         }
         public void verCliente()
         {
@@ -62,12 +78,7 @@ namespace Sistema
             string apellido = Console.ReadLine();
 
             Console.WriteLine("Ingrese la edad del cliente:");
-            int edad;
-            if (!int.TryParse(Console.ReadLine(), out edad))
-            {
-                Console.WriteLine("La edad ingresada no es válida. Se establecerá como 0.");
-                edad = 0;
-            }
+            int edad = num_po();
 
             Console.WriteLine("Ingrese el nombre de usuario del cliente:");
             string usuario = Console.ReadLine();
@@ -83,8 +94,50 @@ namespace Sistema
             int i = 0;
             verCliente();
             Console.WriteLine("Ingrese el indice del cliente a eliminar");
-
+            i = num_rango(1, clientes.Count)-1;
             clientes.Remove(clientes[i - 1]);
         }
+        static int num_po()
+        {
+            int numero;
+
+            do
+            {
+                Console.Write("Ingrese la edad: ");
+
+            } while (!int.TryParse(Console.ReadLine(), out numero) || !Numero_Po(numero));
+            return numero;
+            static bool Numero_Po(int numero)
+            {
+                return numero > 0;
+            }
+            
     }
-}
+        static int num_rango(int num_min, int num_max)
+        {
+
+            int numero;
+
+            do
+            {
+
+                Console.Write($"\nIngresa un número entre {num_min} y {num_max}: ");
+
+            } while (!int.TryParse(Console.ReadLine(), out numero) || !Numero_ran(numero, num_min, num_max));
+            return numero;
+
+            static bool Numero_ran(int numero, int num_min, int num_max)
+            {
+                if (numero >= num_min)
+                {
+                    if (numero <= num_max)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+                else return false;
+
+            }
+        }
+    }

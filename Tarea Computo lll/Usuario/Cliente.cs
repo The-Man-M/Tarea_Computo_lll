@@ -7,7 +7,7 @@ namespace Usuario
         protected int Edad;
         protected string User;
         protected string Pass;
-        protected bool clienteEjecutivo = false;
+       public bool clienteEjecutivo = false;
 
         public Cliente() { }
 
