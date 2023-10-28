@@ -177,7 +177,7 @@ namespace Sistema
             Console.Clear();
 
             Console.WriteLine("Tarea realizada con éxito.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             Console.Clear();
         }
 
@@ -193,7 +193,7 @@ namespace Sistema
             Console.Clear();
 
             Console.WriteLine("Tarea realizada con éxito.");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             Console.Clear();
 
         }
