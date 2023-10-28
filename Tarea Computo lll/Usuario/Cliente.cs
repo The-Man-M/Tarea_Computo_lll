@@ -21,6 +21,8 @@ namespace Usuario
             User = user;
             Pass = pass;
         }
+        
+        
         public Cliente(string nombre, string apellido, int edad, string user, string pass, bool clienteejecutivo)
         {
             Nombre = nombre;
@@ -30,9 +32,6 @@ namespace Usuario
             Pass = pass;
             clienteEjecutivo = clienteejecutivo;
         }
-
-
-
 
 
         public bool inicioDesecion(string pass, string user)
@@ -45,14 +44,19 @@ namespace Usuario
             return acseso;
 
         }
+
+
         public void mostrardatos(int indice)
         {
 
             if (!this.clienteEjecutivo)
             {
-                Console.WriteLine($"{indice + 1} - Nombre: {Nombre}\n\tApellido: {Apellido}\n\tEdad: {Edad}\n\tUsuario: {User} ");
+                Console.WriteLine($"{indice + 1}\n\tNombre: {Nombre}\n\tApellido: {Apellido}\n\tEdad: {Edad}\n\tUsuario: {User} ");
+                Thread.Sleep(500);
             }
         }
+
+
         public bool iniciodesecion(string user, string pass)
         {
             ClienteNormal _ClienteNormal = new ClienteNormal();
@@ -60,19 +64,16 @@ namespace Usuario
         }
     }
 
+
     class ClienteNormal : Cliente
     {
         public bool consultardatos(string User, string Pass, string user, string pass)
         {
-            
             bool acceso = false;
             if (User == user)
             {
                 if (Pass == pass)
-                {
-                    acceso = true;
-                   
-                }
+                {acceso = true; }
             }
             return acceso;
         }
@@ -84,12 +85,8 @@ namespace Usuario
             bool acceso = false;
             if (User == user)
             {
-
                 if (Pass == pass)
-                {
-
-                    acceso = true;
-                }
+                {acceso = true;}
             }
             return acceso;
         }

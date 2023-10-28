@@ -9,21 +9,31 @@ namespace Tarea_Computo_lll
             SQLite basededatos = new SQLite();
 
             int menu = 0;
-          
+            string[] bienvenido = { "B", "i", "e", "n", "v", "e", "n", "i", "d", "o", " ", ".", ".", "." };
+
+            for (int i = 0; i < bienvenido.Length; i++)
+            {
+                Console.Write(bienvenido[i]);
+        //        Thread.Sleep(200);
+            }
+            Thread.Sleep(1000);
+
+            Console.Clear();
+
             do
             {
-                Console.WriteLine("menu\n1. Menu de cliente ejecutivo\n2. Menu de cliente normal\n3. Salir");
+                Console.WriteLine("Menu\n1. Menu de cliente ejecutivo\n2. Menu de cliente normal\n3. Salir");
                 menu = num_rango(1, 3);
 
                 switch (menu)
                 {
                     case 1:
                        
-                        basededatos.mostrarMenuEjecutivo();
+                        basededatos.mostrarMenuEjecutivo(); Console.Clear();
                         break;
                     case 2:
                         
-                        basededatos.mostrarMenu();
+                        basededatos.mostrarMenu(); Console.Clear();
                         break;
                 }
             } while (menu != 3);
@@ -55,7 +65,7 @@ namespace Tarea_Computo_lll
             do
             {
 
-                Console.Write($"\nIngresa un número entre {num_min} y {num_max}: ");
+                Console.Write($"Ingresa un número entre {num_min} y {num_max}: ");
 
             } while (!int.TryParse(Console.ReadLine(), out numero) || !Numero_ran(numero, num_min, num_max));
             return numero;

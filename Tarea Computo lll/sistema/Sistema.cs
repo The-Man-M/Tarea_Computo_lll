@@ -31,23 +31,25 @@ namespace Sistema
         public void mostrarMenuEjecutivo()
         {
             int clienteEjecutivo = 0;
-            string user = "c", pass = "1";
+            string user = "", pass = "";
             int indice = 1;
             int menu = 0;
             bool acceso = false;
+            Console.Clear();
+            Console.WriteLine("Inicie sesión.");
+            Thread.Sleep(500);
 
-
-            Console.WriteLine("Ingrese el usuario");
+            Console.Write("Ingrese el usuario: ");
             user = Console.ReadLine();
 
-            Console.WriteLine("Ingrese la contraseña");
-            Console.WriteLine();
+            Console.Write("Ingrese la contraseña: ");
             pass = Console.ReadLine();
+           
             Console.Clear();
             Console.WriteLine("Buscando ...");
             Thread.Sleep(1000);
             Console.Clear();
-            
+
             for (int i = 0; i < clientes.Count; i++)
             {
                 if (clientes[i].clienteEjecutivo)
@@ -60,7 +62,7 @@ namespace Sistema
             {
                 Console.WriteLine("Usuario encontrado");
                 Thread.Sleep(1000);
-               
+
                 do
                 {
                     Console.Clear();
@@ -70,45 +72,55 @@ namespace Sistema
 
                     switch (menu)
                     {
-                        case 1: verCliente(); break;
+                        case 1: verCliente();Console.ReadKey(); break;
+                        
                         case 2:
                             indice = clientes.Count - 1;
                             agregarCliente(clientes[indice]); break;
+                      
                         case 3:
-                            verCliente();
                             eliminarCliente(clientes[indice]);
                             break;
-                           
                     }
-                    Console.ReadKey();
                 } while (menu != 4);
             }
             else { Console.WriteLine("Usuario no encontrado"); }
-            Console.ReadKey();
             Console.Clear();
         }
+
+
         public void mostrarMenu()
         {
             string user = "", pass = "";
             int menu = 0;
-            bool usuario=false;
+            bool usuario = false;
+            Console.Clear();
+            Thread.Sleep(500);
+
             do
             {
-
                 Console.WriteLine("Menu cliente normal\n1. Mostrar datos \n2. salir");
                 menu = num_rango(1, 2);
+
                 if (menu == 1)
                 {
-                    Console.WriteLine("Ingrese el usuario");
+                    Console.Clear();
+
+                    Console.WriteLine("Inicie sesión.");
+                    Thread.Sleep(500);
+
+                    Console.Write("Ingrese el usuario: ");
                     user = Console.ReadLine();
 
-                    Console.WriteLine("Ingrese la contraseña");
-                    Console.WriteLine();
+                    Console.Write("Ingrese la contraseña: ");
                     pass = Console.ReadLine();
+
                     Console.Clear();
+
                     Console.WriteLine("Buscando ...");
                     Thread.Sleep(1000);
                     Console.Clear();
+
                     for (int i = 0; i < clientes.Count; i++)
                     {
                         if (clientes[i].iniciodesecion(user, pass))
@@ -117,8 +129,10 @@ namespace Sistema
                             Console.WriteLine("Usuario encontrado");
                             Thread.Sleep(1000);
                             Console.Clear();
-                            clientes[i].mostrardatos(1);
+                            
+                            clientes[i].mostrardatos(0);
                             Console.ReadKey();
+                            Console.Clear();
                         }
                     }
                     if (!usuario)
@@ -130,15 +144,18 @@ namespace Sistema
                 }
             } while (menu != 2);
         }
+
+
+
+
         public void verCliente()
         {
             Console.WriteLine("Lista de clientes registrados:");
             for (int i = 0; i < clientes.Count; i++)
-            {
-                clientes[i].mostrardatos(i);
-                Thread.Sleep(100);
-            }
+            {clientes[i].mostrardatos(i);}
         }
+
+
         public void agregarCliente(Cliente cliente)
         {
             Console.WriteLine("Ingrese el nombre del cliente:");
@@ -157,16 +174,31 @@ namespace Sistema
             string contraseña = Console.ReadLine();
 
             clientes.Add(new Cliente(nombre, apellido, edad, usuario, contraseña));
+            Console.Clear();
 
+            Console.WriteLine("Tarea realizada con éxito.");
+            Thread.Sleep(500);
+            Console.Clear();
         }
+
+
         public void eliminarCliente(Cliente cliente)
         {
             int i = 0;
             verCliente();
             Console.WriteLine("Ingrese el índice del cliente a eliminar");
             i = num_rango(1, clientes.Count);
+
             clientes.Remove(clientes[i - 1]);
+            Console.Clear();
+
+            Console.WriteLine("Tarea realizada con éxito.");
+            Thread.Sleep(500);
+            Console.Clear();
+
         }
+
+
         static int num_po()
         {
             int numero;
@@ -183,6 +215,8 @@ namespace Sistema
             }
 
         }
+
+
         static int num_rango(int num_min, int num_max)
         {
 
