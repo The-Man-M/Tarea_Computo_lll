@@ -7,12 +7,13 @@ namespace Tarea_Computo_lll
         static void Main(string[] args)
         {
             SQLite basededatos = new SQLite();
-            Cliente cliente = new Cliente();
+
             int menu = 0;
-            Console.WriteLine("menu\n1. Menu de cliente ejecutivo\n3. Menu de cliente normal\n5. Salir");
-            menu = num_rango(1, 3);
+          
             do
             {
+                Console.WriteLine("menu\n1. Menu de cliente ejecutivo\n3. Menu de cliente normal\n5. Salir");
+                menu = num_rango(1, 3);
 
                 switch (menu)
                 {
@@ -22,8 +23,8 @@ namespace Tarea_Computo_lll
                     case 2:
                         basededatos.mostrarMenu();
                         break;
-                } 
-            } while (menu !=3);
+                }
+            } while (menu != 3);
         }
         static int num_rango(int num_min, int num_max)
         {
