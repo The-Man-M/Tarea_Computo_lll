@@ -12,7 +12,7 @@ namespace Sistema
         private List<Cliente> clientes = new List<Cliente>()
         {
             new Cliente("Carlos","Melendez",18,"manuelmv15","1234") ,
-            new Cliente("juan","zanches",35,"c","1",true),
+            new Cliente("juan","zanches",35,"admin","1234",true),
          new Cliente("María", "López", 25, "marialpz", "5678"),
          new Cliente("Juan", "Pérez", 30, "juan123", "abcd"),
          new Cliente("Luis", "García", 22, "luisgarcia", "efgh"),
@@ -22,6 +22,7 @@ namespace Sistema
          new Cliente("Sofía", "Hernández", 27, "sofiahernandez", "uvwxyz"),
          new Cliente("Diego", "Sánchez", 33, "diegosanchez", "1111"),
          new Cliente("Isabella", "Díaz", 19, "isabelladiaz", "2222"),
+         new Cliente("Isabella", "Díaz", 19, "2", "2"),
 
         };
 
@@ -42,8 +43,11 @@ namespace Sistema
             Console.WriteLine("Ingrese la contraseña");
             Console.WriteLine();
             pass = Console.ReadLine();
-
-            Console.WriteLine("Buscando...");
+            Console.Clear();
+            Console.WriteLine("Buscando ...");
+            Thread.Sleep(1000);
+            Console.Clear();
+            
             for (int i = 0; i < clientes.Count; i++)
             {
                 if (clientes[i].clienteEjecutivo)
@@ -52,11 +56,14 @@ namespace Sistema
                     acceso = clientes[i].inicioDesecion(pass, user);
                 }
             }
-
             if (acceso)
             {
+                Console.WriteLine("Usuario encontrado");
+                Thread.Sleep(1000);
+               
                 do
                 {
+                    Console.Clear();
 
                     Console.WriteLine("Menu de cliente ejecutivo\n1. Ver clientes\n2. Agregar clientes\n3. Eliminar clientes\n4. Salir");
                     menu = num_rango(1, 4);
@@ -71,10 +78,12 @@ namespace Sistema
                             verCliente();
                             eliminarCliente(clientes[indice]);
                             break;
-
+                           
                     }
+                    Console.ReadKey();
                 } while (menu != 4);
             }
+            else { Console.WriteLine("Usuario no encontrado"); }
             Console.ReadKey();
             Console.Clear();
         }
@@ -82,6 +91,7 @@ namespace Sistema
         {
             string user = "", pass = "";
             int menu = 0;
+            bool usuario=false;
             do
             {
 
@@ -95,13 +105,27 @@ namespace Sistema
                     Console.WriteLine("Ingrese la contraseña");
                     Console.WriteLine();
                     pass = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("Buscando ...");
+                    Thread.Sleep(1000);
+                    Console.Clear();
                     for (int i = 0; i < clientes.Count; i++)
                     {
                         if (clientes[i].iniciodesecion(user, pass))
                         {
+                            usuario = true;
+                            Console.WriteLine("Usuario encontrado");
+                            Thread.Sleep(1000);
+                            Console.Clear();
                             clientes[i].mostrardatos(1);
-                            break;
+                            Console.ReadKey();
                         }
+                    }
+                    if (!usuario)
+                    {
+                        Console.WriteLine("Usuario no encontrado");
+                        Thread.Sleep(1000);
+                        Console.Clear();
                     }
                 }
             } while (menu != 2);
@@ -112,6 +136,7 @@ namespace Sistema
             for (int i = 0; i < clientes.Count; i++)
             {
                 clientes[i].mostrardatos(i);
+                Thread.Sleep(100);
             }
         }
         public void agregarCliente(Cliente cliente)

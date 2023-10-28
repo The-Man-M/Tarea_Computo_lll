@@ -1,3 +1,5 @@
+using System;
+
 namespace Usuario
 {
     class Cliente
@@ -54,21 +56,22 @@ namespace Usuario
         public bool iniciodesecion(string user, string pass)
         {
             ClienteNormal _ClienteNormal = new ClienteNormal();
-            return _ClienteNormal.consultardatos(pass, user);
+            return _ClienteNormal.consultardatos(this.User, this.Pass,user, pass);
         }
     }
 
     class ClienteNormal : Cliente
     {
-        public bool consultardatos(string user, string pass)
+        public bool consultardatos(string User, string Pass, string user, string pass)
         {
+            
             bool acceso = false;
-            if (this.User == user)
+            if (User == user)
             {
-                if (this.Pass == pass)
+                if (Pass == pass)
                 {
                     acceso = true;
-                    mostrardatos(0);
+                   
                 }
             }
             return acceso;

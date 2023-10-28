@@ -12,20 +12,41 @@ namespace Tarea_Computo_lll
           
             do
             {
-                Console.WriteLine("menu\n1. Menu de cliente ejecutivo\n3. Menu de cliente normal\n5. Salir");
+                Console.WriteLine("menu\n1. Menu de cliente ejecutivo\n2. Menu de cliente normal\n3. Salir");
                 menu = num_rango(1, 3);
 
                 switch (menu)
                 {
                     case 1:
+                       
                         basededatos.mostrarMenuEjecutivo();
                         break;
                     case 2:
+                        
                         basededatos.mostrarMenu();
                         break;
                 }
             } while (menu != 3);
+
+
+            Console.Clear();
+            
+            Console.WriteLine("ADIOS... ");
+            
+            Thread.Sleep(500);
+            
+            string[] texto = { "H", "a", "s", "t", "a", " ", "p", "r", "o", "n", "t", "o", " ", ".", ".", "." };
+            
+            for (int i = 0; i < texto.Length; i++)
+            {
+                Console.Write(texto[i]);
+                Thread.Sleep(200);
+            }
+            Thread.Sleep(1000);
+
+            Console.Clear() ;
         }
+
         static int num_rango(int num_min, int num_max)
         {
 
