@@ -14,7 +14,7 @@ namespace Tarea_Computo_lll
             for (int i = 0; i < bienvenido.Length; i++)
             {
                 Console.Write(bienvenido[i]);
-        //        Thread.Sleep(200);
+                Thread.Sleep(200);
             }
             Thread.Sleep(1000);
 
